@@ -1,0 +1,29 @@
+<div class="container py-5">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-12 mx-auto">
+
+
+          <div>
+            <div style="display: block">
+              <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions" [legend]="barChartLegend"
+                [chartType]="barChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+            </div>
+            <!-- <button (click)="randomize()">Update</button> -->
+          </div>
+
+
+
+        </div>
+
+
+      </div>
+      <!--/row-->
+
+    </div>
+    <!--/col-->
+  </div>
+  <!--/row-->
+</div>
+<!--/container-->

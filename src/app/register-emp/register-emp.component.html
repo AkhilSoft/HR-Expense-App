@@ -1,0 +1,202 @@
+<div class="container py-5">
+  <div class="row">
+      <div class="col-md-12"> 
+          <div class="row">
+             <div class="col-md-6 mx-auto">
+                <!-- form card login -->
+                <div class="card rounded-0">
+                    <div class="card-header">
+                          <h3 class="mb-0">Register</h3>
+                    </div>
+                    <div class="card-body">
+                        <form [formGroup]="form">
+                          <div class="form-group" >
+                                <label for="name" > Name </label>
+                                <input
+                                  formControlName="name"
+                                  id="name"
+                                  type="text"
+                                  class="form-control"
+                                  (change)="print()"
+                                >
+                          </div>
+                          <div class="alert alert-danger" *ngIf="form.get('name').touched && form.get('name').invalid">
+                            Invalid Name
+                          </div>
+
+                          <div class="form-group" >
+                            <label for="designation" >Designation</label>
+                            <select
+                              formControlName="designation"
+                              id="designation"
+                              type="text"
+                              placeholder="Designation"
+                              class="form-control"
+                              (change)="print()"
+                            
+                            >
+                            <option value="Dev" >Dev</option>
+                            <option value="DevLead" >DevLead</option>
+                            <option value="Tester" >Tester</option>
+                            <option value="Test Lead" >Test Lead</option>
+                            <option value="Consultant" >Consultant</option>
+                            <option value="Sr.Consultant" >Sr.Consultant</option>
+                            <option value="Trainee" >Trainee</option>
+                            <option value="Product Manager" >Product Manager</option>
+                            <option value="SEO Analyst" >SEO Analyst</option>
+                            <option value="Business Analyst" >Business Analyst</option>
+                            <option value="Digital Marketing Executive" >Digital Marketing Executive</option>
+                            <option value="Digital Marketing Manager" >Digital Marketing Manager</option>
+                            <option value="CEO" >CEO</option>
+                            <option value="HR" >HR</option>
+                            </select>
+                          </div>
+                          <div class="alert alert-danger" *ngIf="form.get('designation').touched && form.get('designation').invalid">
+                              Invalid Designation
+                            </div>
+                          
+                            <div class="form-group" >
+                              <label for="salary" > Salary </label>
+                              <input
+                                formControlName="salary"
+                                id="salary"
+                                minlength="3"
+                                maxlength="10"
+                                type="number"
+                                class="form-control"
+                                (change)="print()"
+                              >
+                            </div> 
+                            <div class="alert alert-danger" *ngIf="form.get('salary').touched && form.get('salary').invalid">
+                              Invalid Salary 
+                            </div>
+
+                          <div class="form-group" >
+                            <label for="mobileNo" > Mobile Number </label>
+                            <input
+                              formControlName="mobileNo"
+                              id="mobileNo"
+                             
+                              maxlength="10"
+                              
+                              type="number"
+                              class="form-control"
+                              (change)="print()"
+                            >
+                          </div> 
+                          <div class="alert alert-danger" *ngIf="form.get('mobileNo').touched && form.get('mobileNo').invalid">
+                              Invalid Mobile Number
+                            </div>
+                          <div class="form-group" >
+                            <label for="email" > Email </label>
+                            <input
+                              formControlName="email"
+                              id="email"
+                              type="email"
+                              class="form-control">
+                              
+                          </div>
+                         
+                          <div class="alert alert-danger" *ngIf="form.get('email').touched && form.get('email').invalid">
+                              Invalid Email
+                             
+                            </div>
+                            <div>
+                              Gender
+                            </div>
+                          <div class="form-group "  >
+                              <div class="row">
+                            <div class="col-sm-2">
+                                        <input
+                                          formControlName="gender"
+                                          id="gender"
+                            
+                                          type="radio"
+                                          value="Male"
+                                          (change)="print()"
+                                        >
+                                        <label for="gender" > Male </label>
+                            </div>
+                            <div class="col-sm-3">
+                                        <input
+                                          formControlName="gender"
+
+                                          type="radio"
+                                          value="Female"
+                                          (change)="print()"
+                                        >
+                                        <label for="gender" >Female</label>
+                            </div>
+                          </div>         
+                          </div>
+                        <div class="form-group" >
+                          <label for="password" > Password </label>
+                          <input
+                            formControlName="password"
+                            id="password"
+                            type="password"
+                            class="form-control"
+                            minlength="6"
+                            maxlength="12"
+                            #password
+                            (change)="print()"
+                          >
+                          
+                        </div>
+               
+                          <div class="alert alert-danger" *ngIf="form.get('password').touched && form.get('password').invalid">
+                            
+                              Invalid Password
+                              <div *ngIf="form.get('password').errors.mustContainOneSpecialCharacter">
+                                must Contain OneSpecial Character
+                              </div>
+
+                          </div>
+                          <div class="form-group" >
+                            <label for="password" >Confirm Password </label>
+                            <input
+                              formControlName="cpassword"
+                              id="cpassword"
+                              type="password"
+                              class="form-control"
+                              minlength="6"
+                              maxlength="12"
+                              #cpassword
+                              (change)="print()"
+                            >
+                            
+                          </div>
+                          <div class="alert alert-danger" *ngIf="form.get('password').value != form.get('cpassword').value">
+                          Password does't Match
+
+                        </div>
+                        
+                          
+                            <button class="btn btn-primary" (click)="createEmp()" [disabled]="form.invalid || (  ! form.get('password').value==form.get('cpassword').value ) " >Submit </button>
+
+                          
+                        </form>
+
+                    </div>
+                  <!--/card-block-->
+                  </div>
+                <!-- /form card login -->
+
+                </div>
+
+
+            </div>
+            <!--/row-->
+
+        </div>
+        <!--/col-->
+    </div>
+    <!--/row-->
+</div>
+<!--/container-->
+
+
+
+
+
+

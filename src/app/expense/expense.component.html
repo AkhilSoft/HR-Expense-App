@@ -1,0 +1,75 @@
+<div class="container py-5">
+  <div class="row">
+      <div class="col-md-12"> 
+          <div class="row">
+             <div class="col-md-6 mx-auto">
+                <!-- form card login -->
+                <div class="card rounded-0">
+                    <div class="card-header">
+                          <h3 class="mb-0">Expense</h3>
+                    </div>
+                    <div class="card-body">
+  <form [formGroup]="form" >
+    <div class="form-group" >
+      <label for="empId" >Employee Id </label>
+      <input
+        formControlName="empId"
+        id="empId"
+        type="number"
+        class="form-control">  
+    </div>
+
+    <div class="form-group" >
+      <label for="expense" >Expense</label>
+      <select
+        formControlName="expense"
+        id="expense"
+        type="text"
+        placeholder="expense"
+        class="form-control"
+        (change)="print()"
+      
+      >
+      <option value="Accommodation">Accommodation</option>
+      <option value="Travel" >Travel</option>
+      <option value="Medical" >Medical</option>
+      <option value="Mobile and Telephone Reimbursement" >Mobile and Telephone Reimbursement</option>
+      <option value="Children Education Allowance" >Children Education Allowance</option>
+      
+      </select>
+    </div>
+
+    <div class="form-group" >
+      <label for="date" >Date </label>
+      <input
+        formControlName="date"
+        id="date"
+        type="date"
+        class="form-control">  
+    </div>  
+  
+    <div class="form-group" >
+      <label for="collectAmount" >collectAmount </label>
+      <input
+        formControlName="collectAmount"
+        id="collectAmount"
+        type="number"
+        class="form-control">  
+    </div>
+  <button class="btn btn-primary" (click)="submit()" >Submit </button>
+  </form>
+</div>
+<!-- /form card login -->
+
+</div>
+
+
+</div>
+<!--/row-->
+
+</div>
+<!--/col-->
+</div>
+<!--/row-->
+</div>
+<!--/container-->

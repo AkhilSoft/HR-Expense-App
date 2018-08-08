@@ -1,0 +1,56 @@
+<div class="container py-5">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-6 mx-auto">
+          <table class="table">
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Emp Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Designation</th>
+                <th scope="col">Salary</th>
+                <th scope="col">Profile</th>
+                <th scope="col">Status</th>
+                <th scope="col">Delete</th>
+              </tr>
+            </thead>
+            <tbody>
+
+              <tr  *ngFor="let emp of list;let i=index" >
+                <th scope="row">{{i+1}}</th>
+                <td>{{emp.empId}}</td>
+                <td>{{emp.name}}</td>
+                <td>{{emp.designation}}</td>
+                <td>{{emp.salary}}</td>
+                <td>   
+                  <button class="btn" (click)='editEmp(emp.empId)'  >Profile</button>  
+                </td>
+
+                <td *ngIf="emp.status=='activate'"> 
+                   <button  class="btn" (click)="empStatusChange(emp,'deactivate')"  >Deactivate</button>   
+                </td>
+                <td *ngIf="emp.status=='deactivate'"> 
+                    <button  class="btn" (click)="empStatusChange(emp,'activate')"  >activate</button>   
+                </td>
+              
+
+                <td>   <button class="btn"  (click)="deleteEmp(emp.empId)"  >Delete</button>  </td>
+
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+
+
+      </div>
+      <!--/row-->
+
+    </div>
+    <!--/col-->
+  </div>
+  <!--/row-->
+</div>
+<!--/container-->

@@ -1,0 +1,61 @@
+<h1>HR Office Expense Manager</h1>
+
+
+<nav class="navbar navbar-expand-sm bg-info navbar-dark">
+    <ul class="navbar-nav">
+        <li class="nav-item " 
+        [ngClass]="{'active': (isSelected==1)}" 
+        routerLink="/" >
+          <a class="nav-link" (click)="isSelected=1"  >Home</a>
+        </li>
+
+        <li class="nav-item" 
+          routerLink="/list" 
+          [ngClass]="{'active': (isSelected==2)}" 
+          [hidden]="!this.loginService.isLogin"
+        >
+          <a class="nav-link" (click)="isSelected=2" >List_Employee</a>
+        </li>
+
+        <li class="nav-item" 
+          routerLink="/register"
+          [hidden]="!this.loginService.isLogin"
+          [ngClass]="{'active': (isSelected==3)}"
+        >
+            <a class="nav-link"  (click)="isSelected=3" >Add_Employee</a>
+        </li> 
+
+        <li class="nav-item" 
+          routerLink="/login" 
+          [hidden]="this.loginService.isLogin"
+          [ngClass]="{'active': (isSelected==4)}" 
+        >
+            <a class="nav-link" (click)="isSelected=4">Login</a>
+        </li>
+
+        <li class="nav-item" routerLink="/graph" 
+        [hidden]="!this.loginService.isLogin"
+        [ngClass]="{'active': (isSelected==5)}" 
+       
+        >
+            <a class="nav-link" (click)="isSelected=5" >Graph</a>
+        </li>
+
+
+        <li class="nav-item"  [hidden]="!this.loginService.isLogin"
+        [ngClass]="{'active': (isSelected==6)}"
+        routerLink="/expense"
+        >
+           <a class="nav-link"  (click)="isSelected=6" > Expense </a>
+        </li>
+
+         <li class="nav-item"  [hidden]="!this.loginService.isLogin"
+         [ngClass]="{'active': (isSelected==7)}"
+         >
+            <a class="nav-link" (click)="logout()" >Logout</a>
+         </li>
+       
+      </ul>
+</nav>
+
+<router-outlet></router-outlet>

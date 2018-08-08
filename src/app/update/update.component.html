@@ -1,0 +1,182 @@
+<div class="container py-5">
+  <div class="row">
+      <div class="col-md-12"> 
+          <div class="row">
+             <div class="col-md-6 mx-auto">
+                <!-- form card login -->
+                <div class="card rounded-0">
+                    <div class="card-header">
+                          <h3 class="mb-0">Update</h3>
+                    </div>
+                    <div class="card-body">
+                      <form [formGroup]="form">
+                        <div class="form-group" >
+                        <label for="_id" hidden > ID </label>
+                        <input type="text"
+                        formControlName="_id"
+                        id="_id"
+                        class="form-control"
+                        [value]="emp._id"
+                        hidden
+                        disabled
+                        >
+                      </div>
+                      <div class="form-group" >
+                            <label for="_id" > Emp ID </label>
+                        <input type="text"
+                        formControlName="empId"
+                        id="empId"
+                        class="form-control"
+                        [value]="emp.empId"
+                        disabled
+                        > 
+                    </div>
+                    <div class="form-group" >
+                        <label for="_id" > Name </label>
+                        <input
+                          formControlName="name"
+                          id="name"
+                          type="text"
+                          class="form-control"
+                          [value]="emp.name"
+                          (change)="emp.name=form.get('name').value"
+                        >
+                  </div>
+                  <div class="form-group" >
+                        <label for="designation" >Designation</label>
+                        <select
+                          formControlName="designation"
+                          id="designation"
+                          type="text"
+                          
+                          placeholder="Designation"
+                          class="form-control"
+                          (change)="emp.designation=form.get('designation').value"
+                        
+                        >
+                        <option value="Dev" [selected]="emp.designation=='Dev'" >Dev</option>
+                        <option value="DevLead" [selected]="emp.designation=='DevLead'" >DevLead</option>
+                        <option value="Tester" [selected]="emp.designation=='Tester'" >Tester</option>
+                        <option value="Test Lead" [selected]="emp.designation=='Test Lead'" >Test Lead</option>
+                        <option value="Consultant" [selected]="emp.designation=='Consultant'" >Consultant</option>
+                        <option value="Sr.Consultant" [selected]="emp.designation=='Sr.Consultant'">Sr.Consultant</option>
+                        <option value="Trainee" [selected]="emp.designation=='Trainee'">Trainee</option>
+                        <option value="Product Manager" [selected]="emp.designation=='Product Manager'">Product Manager</option>
+                        <option value="SEO Analyst" [selected]="emp.designation=='SEO Analyst'">SEO Analyst</option>
+                        <option value="Business Analyst" [selected]="emp.designation=='Business Analyst'">Business Analyst</option>
+                        <option value="Digital Marketing Executive" [selected]="emp.designation=='Digital Marketing Executive'">Digital Marketing Executive</option>
+                        <option value="Digital Marketing Manager" [selected]="emp.designation=='Digital Marketing Manager'">Digital Marketing Manager</option>
+                        <option value="CEO" [selected]="emp.designation=='CEO'">CEO</option>
+                        <option value="HR" [selected]="emp.designation=='HR'">HR</option>
+                        </select>
+                      </div>
+                      <label for="mobileNo" >Mobile Number</label>
+                      <input
+                      formControlName="mobileNo"
+                      id="mobileNo"
+                      minlength="10"
+                      maxlength="10"
+                      type="number"
+                      class="form-control"
+                      [value]="emp.mobileNo"
+                      (change)="emp.mobileNo=form.get('mobileNo').value"
+                    >
+                    <div class="form-group" >
+                            <label for="email" > Email </label>
+                            <input
+                              formControlName="email"
+                              id="email"
+                              type="email"
+                              class="form-control"
+                              [value]="emp.emailId"
+                              (change)="emp.emailId=form.get('email').value"
+                            >
+                              
+                    </div>
+                    <div class="form-group" >
+                            <label for="salary" > Salary </label>
+                            <input
+                              formControlName="salary"
+                              id="salary"
+                              minlength="3"
+                              maxlength="10"
+                              
+                              type="number"
+                              class="form-control"
+                              (change)="emp.salary=form.get('salary').value"
+                              [value]="emp.salary"
+                            >
+                    </div> 
+                    <div class="form-group" >
+                            <label for="gender" >Gender</label>
+                            <select
+                              formControlName="gender"
+                              id="gender"
+                              type="text"
+                              placeholder="gender"
+                              class="form-control"
+                              (change)="emp.gender=form.get('gender').value"
+                            
+                            
+                            >
+                            <option value="Male" [selected]="emp.gender=='Male'" >Male</option>
+                            <option value="Female" [selected]="emp.gender=='Female'" >Female</option>
+                          
+                        </select>
+
+                        </div> 
+                        
+                        <div class="form-group" >
+                                <label for="password" > Password </label>
+                                <input
+                                  formControlName="password"
+                                  id="password"
+                                  type="password"
+                                  class="form-control"
+                                  (change)="emp.password=form.get('password').value"
+                                  [value]="emp.password"
+                                >
+                                  
+                        </div>
+                        <div class="form-group" *ngIf="form.get('password').touched" >
+                                <label for="cpassword" >Confirm Password </label>
+                                <input
+                                  formControlName="cpassword"
+                                  id="cpassword"
+                                  type="password"
+                                  class="form-control"
+                                  
+                                  
+                                >
+                                  
+                        </div>
+                       
+                        <button class="btn btn-primary" (click)="updateEmp()"  >Update </button>
+
+                        
+
+                        </form>
+
+                    </div>
+                  <!--/card-block-->
+                  </div>
+                <!-- /form card login -->
+
+                </div>
+
+
+            </div>
+            <!--/row-->
+
+        </div>
+        <!--/col-->
+    </div>
+    <!--/row-->
+</div>
+<!--/container-->
+
+
+
+
+
+

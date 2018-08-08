@@ -1,0 +1,82 @@
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-12">
+               
+            <div class="row">
+               <div class="col-md-6 mx-auto">
+
+                    <!-- form card login -->
+                    <div class="card rounded-0">
+                        <div class="card-header">
+                            <h3 class="mb-0">HR Login</h3>
+                        </div>
+                        <div class="card-body">
+                            <form [formGroup]="form" >
+                              <div class="form-group" >
+                                <!-- <label for="email" > Email </label> -->
+                                <input
+                                  formControlName="email"
+                                  placeholder="Email"
+                                  id="email"
+                                  type="email"
+                                  class="form-control">
+                              </div>
+                              <div class="alert alert-danger form-group" *ngIf="form.get('email').touched && form.get('email').invalid">
+                            
+                                Invalid Email
+  
+                            </div>
+                                <div class="form-group" >
+                                <!-- <label for="password" >Password </label> -->
+                                <input
+                                  formControlName="password"
+                                  id="password"
+                                  type="password"
+                                  placeholder="Password"
+                                  class="form-control">
+                                 
+                                </div>
+                                <div class="alert alert-danger form-group" *ngIf="form.get('password').touched && form.get('password').invalid">
+                            
+                                Invalid Password
+  
+                                </div>
+                                <div *ngIf="statusMessage!=''" class="alert alert-danger">
+                                    {{statusMessage}}
+                                  </div>
+                                <button class="btn btn-primary" (click)="login(email)" [disabled]="form.invalid" >Login </button>
+                         
+                            </form>
+                        </div>
+                        <!--/card-block-->
+                    </div>
+                    <!-- /form card login -->
+                  
+                </div>
+
+
+            </div>
+            <!--/row-->
+
+        </div>
+        <!--/col-->
+    </div>
+    <!--/row-->
+</div>
+<!--/container-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
