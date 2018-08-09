@@ -16,6 +16,8 @@ import { GraphViewComponent } from './graph-view/graph-view.component';
 import { ChartsModule } from 'ng2-charts';
 import { ProfileComponent } from './profile/profile.component';
 import { ListComponent } from './list/list.component';
+import { EmpGraphViewComponent } from './emp-graph-view/emp-graph-view.component';
+import { EmpGraphComponent } from './emp-graph/emp-graph.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { ListComponent } from './list/list.component';
     ExpenseComponent,
     GraphViewComponent,
     ProfileComponent,
-    ListComponent
+    ListComponent,
+    EmpGraphViewComponent,
+    EmpGraphComponent
   ],
   imports: [
     BrowserModule,
@@ -49,6 +53,15 @@ import { ListComponent } from './list/list.component';
           {
             path:"graph-view",
             component:GraphViewComponent
+          },
+          {
+            path:"emp-graph",
+            component:EmpGraphComponent
+          },
+        
+          {
+            path:"emp-graph-view",
+            component:EmpGraphViewComponent
           },
           {
             path:"register",

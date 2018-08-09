@@ -12,6 +12,7 @@
                 <th scope="col">Designation</th>
                 <th scope="col">Salary</th>
                 <th scope="col">Profile</th>
+                <th scope="col">Graph</th>
                 <th scope="col">Status</th>
                 <th scope="col">Delete</th>
               </tr>
@@ -26,6 +27,9 @@
                 <td>{{emp.salary}}</td>
                 <td>   
                   <button class="btn" (click)='editEmp(emp.empId)'  >Profile</button>  
+                </td>
+                <td>   
+                  <button class="btn" (click)='viewGraph(emp.empId)' >View Graph</button>  
                 </td>
 
                 <td *ngIf="emp.status=='activate'"> 

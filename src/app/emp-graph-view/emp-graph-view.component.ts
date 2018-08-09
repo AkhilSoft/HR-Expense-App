@@ -1,18 +1,18 @@
-import { LoginService } from './../login.service';
 import { Component, OnInit } from '@angular/core';
+import { LoginService } from '../login.service';
 
 @Component({
-  selector: 'bar-chart-demo',
-  templateUrl: './graph-view.component.html',
-  styleUrls: ['./graph-view.component.css']
+  selector: 'emp-graph-view',
+  templateUrl: './emp-graph-view.component.html',
+  styleUrls: ['./emp-graph-view.component.css']
 })
-export class GraphViewComponent {
+export class EmpGraphViewComponent {
   public barChartOptions:any = {
     scaleShowVerticalLines: false,
     responsive: true
   };
   constructor(private loginservice:LoginService){}
-  public barChartLabels:string[] = this.loginservice.graphEmpId;
+  public barChartLabels:string[] = this.loginservice.graphDates;
   public barChartType:string = 'bar';
   public barChartLegend:boolean = true;
  
@@ -30,13 +30,9 @@ export class GraphViewComponent {
     console.log(e);
   }
   ngOnDestroy(){
-    this.loginservice.graphCollection=null;
-    this.loginservice.graphEmpId=null;
-    this.loginservice.graphExpense=null;
     this.loginservice.graphCollection=[];
-    this.loginservice.graphEmpId=[];
+    this.loginservice.graphDates=[];
     this.loginservice.graphExpense=[];
-    this.loginservice.empId='';
   }
 
 }

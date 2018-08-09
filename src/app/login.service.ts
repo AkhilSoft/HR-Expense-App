@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 export class LoginService {
   isLogin:boolean=false;
   empEmail:string;
+  graphEmpId:string[]=[];
   empId:string;
   graphDates:string[]=[];
   graphExpense:number[]=[];
