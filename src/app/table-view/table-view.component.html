@@ -1,0 +1,43 @@
+<div class="container py-5">
+  <div class="row">
+    <div class="col-md-10">
+      <div class="row">
+        <div class="col-md-9 mx-auto">
+          <h2>List Of Expenses of Employee Id {{empId}}   </h2>
+          <table class="table">
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Date</th>
+                <th scope="col">Expense Spent</th>
+                <th scope="col">Expense Collected</th>
+                <th scope="col">Difference</th>
+            
+              </tr>
+            </thead>
+            <tbody>
+
+              <tr  *ngFor="let date of this.loginService.graphDates;let i=index" >
+                <th scope="row">{{i+1}}</th>
+                <td>{{date}}</td>
+                <td>{{this.loginService.graphExpense[i]}}</td>
+                <td>{{this.loginService.graphCollection[i]}}</td>
+                <td>{{this.loginService.graphExpenseDiffer[i]}}</td>
+               
+
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+
+
+      </div>
+      <!--/row-->
+
+    </div>
+    <!--/col-->
+  </div>
+  <!--/row-->
+</div>
+<!--/container-->

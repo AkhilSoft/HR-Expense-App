@@ -11,5 +11,7 @@ export class LoginService {
   graphDates:string[]=[];
   graphExpense:number[]=[];
   graphCollection:number[]=[];
+  graphExpenseDiffer:number[]=[];
+  
   constructor() { }
 }

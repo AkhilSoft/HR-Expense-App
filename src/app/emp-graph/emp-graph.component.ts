@@ -33,13 +33,18 @@ export class EmpGraphComponent implements OnInit {
       {
         this.loginService.graphCollection.unshift(response.json()[i].expenseCollect);
         this.loginService.graphExpense.unshift(response.json()[i].expenseSpent);
+
         let date = new Date(response.json()[i].date);
         this.loginService.graphDates.unshift( date.toLocaleDateString() );
+        this.loginService.graphExpenseDiffer.push( response.json()[i].expenseSpent - response.json()[i].expenseCollect );
+
       }
 
     }
-    this.loginService.graphCollection.push(1000);
-    this.loginService.graphExpense.push(1000);
+    if( this.loginService.graphCollection.length > 1 ){
+      this.loginService.graphCollection.push(1000);
+      this.loginService.graphExpense.push(1000);
+    }
     console.log("-------------");
     console.log(this.loginService.graphDates);
     console.log(this.loginService.graphCollection);

@@ -18,7 +18,9 @@ export class EmpGraphViewComponent {
  
   public barChartData:any[] = [
     {data: this.loginservice.graphExpense, label: 'Expense'},
-    {data: this.loginservice.graphCollection, label: 'Collected'}
+    {data: this.loginservice.graphCollection, label: 'Collected'},
+    {data: this.loginservice.graphExpenseDiffer, label: 'Difference'}
+
   ];
  
   // events
@@ -30,9 +32,15 @@ export class EmpGraphViewComponent {
     console.log(e);
   }
   ngOnDestroy(){
+    this.loginservice.graphCollection=null;
+    this.loginservice.graphDates=null;
+    this.loginservice.graphExpense=null;
+    this.loginservice.graphExpenseDiffer=null;
     this.loginservice.graphCollection=[];
     this.loginservice.graphDates=[];
     this.loginservice.graphExpense=[];
+    this.loginservice.graphExpenseDiffer=[];
+
   }
 
 }

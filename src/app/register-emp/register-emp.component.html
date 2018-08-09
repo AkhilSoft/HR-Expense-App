@@ -138,17 +138,16 @@
                             class="form-control"
                             minlength="6"
                             maxlength="12"
-                            #password
-                            (change)="print()"
+                                             
                           >
                           
                         </div>
                
-                          <div class="alert alert-danger" *ngIf="form.get('password').touched && form.get('password').invalid">
+                          <div class="alert alert-danger" *ngIf="password.touched && password.invalid">
                             
                               Invalid Password
-                              <div *ngIf="form.get('password').errors.mustContainOneSpecialCharacter">
-                                must Contain OneSpecial Character
+                              <div *ngIf="password.errors.requried">
+                                password is must
                               </div>
 
                           </div>

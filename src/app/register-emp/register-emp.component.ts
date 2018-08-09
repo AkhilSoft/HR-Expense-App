@@ -10,8 +10,9 @@ import { CustomValidation } from "../CustomValidation";
 })
 export class RegisterEmpComponent implements OnInit {
   url:string= "http://192.168.2.81:8080/OfficeExpenseManager/registration/registration1";
-
-  form = new FormGroup({
+  form;
+ formInit(){
+  this.form = new FormGroup({
     name: new FormControl("" ,Validators.required),
     
     designation: new FormControl("" ,Validators.required),
@@ -23,16 +24,18 @@ export class RegisterEmpComponent implements OnInit {
     cpassword: new FormControl("",Validators.required)
   });
 
+ }
   constructor(private http: Http) {
     // http.get(this.url)
     //   .subscribe(response => {
     //   this.emp=response.json();
     //   console.log(response.json);
     //   });
+    this.formInit();
   }
 
-  print(){
-    console.log(this.form);
+  print(p){
+    console.log(p);
     
   }
 
@@ -40,6 +43,9 @@ export class RegisterEmpComponent implements OnInit {
 
   ngOnInit() {
     
+  }
+  get password(){
+    return this.form.get('password');
   }
   createEmp() {
     let emp = {
@@ -60,8 +66,14 @@ export class RegisterEmpComponent implements OnInit {
       console.log(response);
 
       alert(response.json().statusMessage);
-     
-     
+      this.form.password.value='';
+      this.form.gender.value='';
+      this.form.cpassword.value='';
+
+      this.form.reset();
+      
+      this.formInit();
+   
     });
   }
 }

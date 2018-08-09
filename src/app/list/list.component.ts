@@ -42,11 +42,18 @@ export class ListComponent implements OnInit {
     this.http.get("http://192.168.2.81:8080/OfficeExpenseManager/delete/delete1"+"?empId="+empId+"").subscribe(response => {
       console.log(response.json());
       alert(response.json().statusMessage);
-      this.router.navigateByUrl('/list'); 
+    
+      this.ngOnInit();
     });
   }
   viewGraph(empId){
    this.loginservice.empId=empId;
    this.router.navigateByUrl('/emp-graph');                   
   }
+  viewTable(empId){
+    this.loginservice.empId=empId;
+    this.router.navigateByUrl('/table');    
+  }
+
+
 }

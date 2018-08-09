@@ -18,6 +18,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { ListComponent } from './list/list.component';
 import { EmpGraphViewComponent } from './emp-graph-view/emp-graph-view.component';
 import { EmpGraphComponent } from './emp-graph/emp-graph.component';
+import { TableComponent } from './table/table.component';
+import { TableViewComponent } from './table-view/table-view.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { EmpGraphComponent } from './emp-graph/emp-graph.component';
     ProfileComponent,
     ListComponent,
     EmpGraphViewComponent,
-    EmpGraphComponent
+    EmpGraphComponent,
+    TableComponent,
+    TableViewComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +62,14 @@ import { EmpGraphComponent } from './emp-graph/emp-graph.component';
             path:"emp-graph",
             component:EmpGraphComponent
           },
-        
+          {
+            path:"table",
+            component:TableComponent
+          },
+          {
+            path:"table-view",
+            component:TableViewComponent
+          },
           {
             path:"emp-graph-view",
             component:EmpGraphViewComponent

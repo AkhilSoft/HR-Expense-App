@@ -18,7 +18,8 @@ export class GraphViewComponent {
  
   public barChartData:any[] = [
     {data: this.loginservice.graphExpense, label: 'Expense'},
-    {data: this.loginservice.graphCollection, label: 'Collected'}
+    {data: this.loginservice.graphCollection, label: 'Collected'},
+    {data: this.loginservice.graphExpenseDiffer, label: 'Difference'}
   ];
  
   // events
@@ -33,8 +34,10 @@ export class GraphViewComponent {
     this.loginservice.graphCollection=null;
     this.loginservice.graphEmpId=null;
     this.loginservice.graphExpense=null;
+    this.loginservice.graphExpenseDiffer=null;
     this.loginservice.graphCollection=[];
     this.loginservice.graphEmpId=[];
+    this.loginservice.graphExpenseDiffer=[];
     this.loginservice.graphExpense=[];
     this.loginservice.empId='';
   }

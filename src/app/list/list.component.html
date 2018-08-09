@@ -1,18 +1,19 @@
 <div class="container py-5">
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-10">
       <div class="row">
-        <div class="col-md-6 mx-auto">
+        <div class="col-md-9 mx-auto">
           <table class="table">
             <thead class="thead-light">
               <tr>
                 <th scope="col">#</th>
-                <th scope="col">Emp Id</th>
+                <th scope="col">Emp_Id</th>
                 <th scope="col">Name</th>
                 <th scope="col">Designation</th>
                 <th scope="col">Salary</th>
                 <th scope="col">Profile</th>
-                <th scope="col">Graph</th>
+                <th scope="col">Expense_Graph</th>
+                <th scope="col">Expense_Table</th>
                 <th scope="col">Status</th>
                 <th scope="col">Delete</th>
               </tr>
@@ -26,21 +27,24 @@
                 <td>{{emp.designation}}</td>
                 <td>{{emp.salary}}</td>
                 <td>   
-                  <button class="btn" (click)='editEmp(emp.empId)'  >Profile</button>  
+                  <button class="btn btn-sm" (click)='editEmp(emp.empId)'  >Profile</button>  
                 </td>
                 <td>   
-                  <button class="btn" (click)='viewGraph(emp.empId)' >View Graph</button>  
+                  <button class="btn btn-sm" (click)='viewGraph(emp.empId)' >View Graph</button>  
+                </td>
+                <td>   
+                  <button class="btn btn-sm" (click)='viewTable(emp.empId)' >View Table</button>  
                 </td>
 
                 <td *ngIf="emp.status=='activate'"> 
-                   <button  class="btn" (click)="empStatusChange(emp,'deactivate')"  >Deactivate</button>   
+                   <button  class="btn btn-sm" (click)="empStatusChange(emp,'deactivate')"  >Deactivate</button>   
                 </td>
                 <td *ngIf="emp.status=='deactivate'"> 
-                    <button  class="btn" (click)="empStatusChange(emp,'activate')"  >activate</button>   
+                    <button  class="btn btn-sm" (click)="empStatusChange(emp,'activate')"  >activate</button>   
                 </td>
               
 
-                <td>   <button class="btn"  (click)="deleteEmp(emp.empId)"  >Delete</button>  </td>
+                <td>   <button class="btn btn-sm"  (click)="deleteEmp(emp.empId)"  >Delete</button>  </td>
 
               </tr>
 
