@@ -10,11 +10,11 @@
                       </div>
                       <div class="card-body">
                       <form [formGroup]="form">
-                            <div class="col-md-11">
+                            <div class="form-group">
                                 <label for="dsate">From Date </label>
                                 <input formControlName="sdate" id="sdate" type="date" class="form-control">
                             </div>
-                          <div class="col-md-11">
+                          <div class="form-group">
                    
                         
                           <label for="edate">To Date </label>
@@ -22,7 +22,7 @@
                         
                     
                            </div>
-                           <div class="col-md-11">
+                           <div class="form-group">
                            <button class="btn btn-primary" (click)="getDate()" [disabled]="form.invalid" >Submit </button>
                             </div>
                      </form>
