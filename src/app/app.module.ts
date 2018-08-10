@@ -20,6 +20,7 @@ import { EmpGraphViewComponent } from './emp-graph-view/emp-graph-view.component
 import { EmpGraphComponent } from './emp-graph/emp-graph.component';
 import { TableComponent } from './table/table.component';
 import { TableViewComponent } from './table-view/table-view.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { TableViewComponent } from './table-view/table-view.component';
     ChartsModule,
     ReactiveFormsModule,
     HttpModule,
+    NgxSpinnerModule,
     HttpClientModule,
     RouterModule.forRoot([
           {

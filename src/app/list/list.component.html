@@ -1,10 +1,16 @@
+
+
+
 <div class="container py-5">
   <div class="row">
     <div class="col-md-10">
       <div class="row">
         <div class="col-md-9 mx-auto">
+          
           <table class="table">
             <thead class="thead-light">
+
+
               <tr>
                 <th scope="col">#</th>
                 <th scope="col">Emp_Id</th>
@@ -18,9 +24,13 @@
                 <th scope="col">Delete</th>
               </tr>
             </thead>
-            <tbody>
 
+            <tbody>
+          
+          
               <tr  *ngFor="let emp of list;let i=index" >
+                
+        
                 <th scope="row">{{i+1}}</th>
                 <td>{{emp.empId}}</td>
                 <td>{{emp.name}}</td>
@@ -51,13 +61,48 @@
             </tbody>
           </table>
         </div>
-
-
       </div>
       <!--/row-->
 
+
+
     </div>
     <!--/col-->
+  </div>
+  <!--/row-->
+</div>
+<!--/container-->
+
+
+
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-12"> 
+            <div class="row">
+               <div class="col-md-6 mx-auto">
+                  <!-- form card login -->
+                  
+              
+
+                      <ngx-spinner
+                            bdColor="rgba(255,255,255)"
+                            size="medium"
+                            color="#79bbb5"
+                            type="ball-clip-rotate">
+                           
+                      </ngx-spinner> 
+                    
+                
+              <!-- /form card login -->
+
+              </div>
+
+
+          </div>
+          <!--/row-->
+
+      </div>
+      <!--/col-->
   </div>
   <!--/row-->
 </div>

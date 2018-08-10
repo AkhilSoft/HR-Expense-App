@@ -27,7 +27,7 @@
         type="text"
         placeholder="expense"
         class="form-control"
-        (change)="print()"
+       
       
       >
       <option value="Accommodation">Accommodation</option>
@@ -56,7 +56,7 @@
         type="number"
         class="form-control">  
     </div>
-  <button class="btn btn-primary" (click)="submit()" >Submit </button>
+  <button class="btn btn-primary" (click)="submit()" [disabled]="form.invalid" >Submit </button>
   </form>
 </div>
 <!-- /form card login -->

@@ -36,7 +36,7 @@ export class EmpGraphComponent implements OnInit {
 
         let date = new Date(response.json()[i].date);
         this.loginService.graphDates.unshift( date.toLocaleDateString() );
-        this.loginService.graphExpenseDiffer.push( response.json()[i].expenseSpent - response.json()[i].expenseCollect );
+        this.loginService.graphExpenseDiffer.unshift( response.json()[i].expenseSpent - response.json()[i].expenseCollect );
 
       }
 

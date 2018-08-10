@@ -13,7 +13,7 @@ export class GraphComponent implements OnInit {
 
   constructor(private loginService:LoginService,private http:Http,private router:Router) { }
   form= new FormGroup ({
-    sdate: new FormControl("",[Validators.required,Validators.email]),
+    sdate: new FormControl("",[Validators.required]),
     edate:new FormControl("",[Validators.required]),
     
   });

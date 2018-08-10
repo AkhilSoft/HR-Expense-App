@@ -40,7 +40,6 @@ export class EmpGraphViewComponent {
     this.loginservice.graphDates=[];
     this.loginservice.graphExpense=[];
     this.loginservice.graphExpenseDiffer=[];
-
   }
 
 }

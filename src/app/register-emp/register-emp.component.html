@@ -17,7 +17,7 @@
                                   id="name"
                                   type="text"
                                   class="form-control"
-                                  (change)="print()"
+                                
                                 >
                           </div>
                           <div class="alert alert-danger" *ngIf="form.get('name').touched && form.get('name').invalid">
@@ -32,7 +32,7 @@
                               type="text"
                               placeholder="Designation"
                               class="form-control"
-                              (change)="print()"
+                             
                             
                             >
                             <option value="Dev" >Dev</option>
@@ -64,7 +64,7 @@
                                 maxlength="10"
                                 type="number"
                                 class="form-control"
-                                (change)="print()"
+                             
                               >
                             </div> 
                             <div class="alert alert-danger" *ngIf="form.get('salary').touched && form.get('salary').invalid">
@@ -81,7 +81,7 @@
                               
                               type="number"
                               class="form-control"
-                              (change)="print()"
+                          
                             >
                           </div> 
                           <div class="alert alert-danger" *ngIf="form.get('mobileNo').touched && form.get('mobileNo').invalid">
@@ -113,7 +113,7 @@
                             
                                           type="radio"
                                           value="Male"
-                                          (change)="print()"
+                                     
                                         >
                                         <label for="gender" > Male </label>
                             </div>
@@ -161,7 +161,7 @@
                               minlength="6"
                               maxlength="12"
                               #cpassword
-                              (change)="print()"
+               
                             >
                             
                           </div>

@@ -11,19 +11,19 @@
                       <div class="card-body">
                       <form [formGroup]="form">
                             <div class="col-md-11">
-                                <label for="dsate">Date </label>
+                                <label for="dsate">From Date </label>
                                 <input formControlName="sdate" id="sdate" type="date" class="form-control">
                             </div>
                           <div class="col-md-11">
                    
                         
-                          <label for="edate">Date </label>
+                          <label for="edate">To Date </label>
                           <input formControlName="edate" id="edate" type="date" class="form-control">
                         
                     
                            </div>
                            <div class="col-md-11">
-                           <button class="btn btn-primary" (click)="getDate()"  >Submit </button>
+                           <button class="btn btn-primary" (click)="getDate()" [disabled]="form.invalid" >Submit </button>
                             </div>
                      </form>
           </div>

@@ -1,3 +1,4 @@
+import { Validators } from '@angular/forms';
 import { LoginService } from './../login.service';
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
@@ -11,11 +12,11 @@ import { FormControl, FormGroup } from '@angular/forms';
 export class ExpenseComponent implements OnInit {
 
   form= new FormGroup ({
-    expense:new FormControl(),
-    empId:new FormControl(),
-   date:new FormControl(),
-   spentAmount:new FormControl(),
-   collectAmount:new FormControl(),
+    expense:new FormControl('',[Validators.required]),
+    empId:new FormControl('',Validators.required),
+   date:new FormControl('',Validators.required),
+
+   collectAmount:new FormControl('',Validators.required),
    
   });
 

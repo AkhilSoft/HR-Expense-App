@@ -15,10 +15,10 @@ export class RegisterEmpComponent implements OnInit {
   this.form = new FormGroup({
     name: new FormControl("" ,Validators.required),
     
-    designation: new FormControl("" ,Validators.required),
+    designation: new FormControl("",Validators.required),
     salary:  new FormControl("" ,Validators.required),
     mobileNo: new FormControl("",[Validators.required]),
-    email: new FormControl("",[Validators.required,Validators.email,CustomValidation.cannotContainSpace,CustomValidation.mustContainDotforEmail]),
+    email: new FormControl("",[Validators.required,Validators.email]),
     gender: new FormControl("",Validators.required),
     password: new FormControl("",[Validators.required,CustomValidation.mustContainOneSpecialCharacter]),
     cpassword: new FormControl("",Validators.required)
@@ -31,7 +31,7 @@ export class RegisterEmpComponent implements OnInit {
     //   this.emp=response.json();
     //   console.log(response.json);
     //   });
-    this.formInit();
+  
   }
 
   print(p){
@@ -42,7 +42,7 @@ export class RegisterEmpComponent implements OnInit {
 
 
   ngOnInit() {
-    
+    this.formInit();
   }
   get password(){
     return this.form.get('password');
@@ -66,13 +66,15 @@ export class RegisterEmpComponent implements OnInit {
       console.log(response);
 
       alert(response.json().statusMessage);
-      this.form.password.value='';
-      this.form.gender.value='';
-      this.form.cpassword.value='';
+      // this.form.password.value='';
+      // this.form.gender.value='';
+      // this.form.cpassword.value='';
 
       this.form.reset();
+      this.form.markAsUntouched();
       
-      this.formInit();
+     // this.formInit();
+    //  this.ngOnInit();
    
     });
   }
