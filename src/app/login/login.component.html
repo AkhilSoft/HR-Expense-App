@@ -1,17 +1,13 @@
 <div class="container py-5">
     <div class="row">
         <div class="col-md-12">
-               
-            <div class="row">
-               <div class="col-md-6 mx-auto">
 
-                    <ngx-spinner
-                    bdColor="rgba(255,255,255)"
-                    size="medium"
-                    color="#79bbb5"
-                    type="ball-clip-rotate">
-                   
-                    </ngx-spinner> 
+            <div class="row">
+                <div class="col-md-6 mx-auto">
+
+                    <ngx-spinner bdColor="rgba(255,255,255)" size="medium" color="#79bbb5" type="ball-clip-rotate">
+
+                    </ngx-spinner>
 
                     <!-- form card login -->
                     <div class="card rounded-0">
@@ -19,47 +15,39 @@
                             <h3 class="mb-0">HR Login</h3>
                         </div>
                         <div class="card-body">
-                            <form [formGroup]="form" >
-                              <div class="form-group" >
-                                <!-- <label for="email" > Email </label> -->
-                                <input
-                                  formControlName="email"
-                                  placeholder="Username"
-                                  id="email"
-                                  type="email"
-                                  class="form-control">
-                              </div>
-                              <div class="alert alert-danger form-group" *ngIf="form.get('email').touched && form.get('email').invalid">
-                            
-                                Invalid Username
-  
-                            </div>
-                                <div class="form-group" >
-                                <!-- <label for="password" >Password </label> -->
-                                <input
-                                  formControlName="password"
-                                  id="password"
-                                  type="password"
-                                  placeholder="Password"
-                                  class="form-control">
-                                 
+                            <form [formGroup]="form">
+                                <div class="form-group">
+                                    <!-- <label for="email" > Email </label> -->
+                                    <input formControlName="email" placeholder="Username" id="email" type="email" class="form-control">
+                                </div>
+                                <div class="alert alert-danger form-group" *ngIf="form.get('email').touched && form.get('email').invalid">
+
+                                    Invalid Username
+
+                                </div>
+                                <div class="form-group">
+                                    <!-- <label for="password" >Password </label> -->
+                                    <input formControlName="password" id="password" type="password" placeholder="Password" class="form-control">
+
                                 </div>
                                 <div class="alert alert-danger form-group" *ngIf="form.get('password').touched && form.get('password').invalid">
-                            
-                                Invalid Password
-  
+
+                                    Invalid Password
+
                                 </div>
                                 <div *ngIf="statusMessage!=''" class="alert alert-danger">
                                     {{statusMessage}}
-                                  </div>
-                                <button class="btn btn-primary" (click)="login(email)" [disabled]="form.invalid" >Login </button>
-                         
+                                </div>
+
+                                <button class="btn btn-primary" (click)="login(email)" placement="top" type="button" ngbPopover="Fill All the Fields" [disabled]="form.invalid">Login
+                                </button>
+
                             </form>
                         </div>
                         <!--/card-block-->
                     </div>
                     <!-- /form card login -->
-                  
+
                 </div>
 
 
@@ -72,19 +60,3 @@
     <!--/row-->
 </div>
 <!--/container-->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

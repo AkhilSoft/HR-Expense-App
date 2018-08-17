@@ -1,4 +1,5 @@
 import { Http, HttpModule } from '@angular/http';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router'
@@ -21,7 +22,7 @@ import { EmpGraphComponent } from './emp-graph/emp-graph.component';
 import { TableComponent } from './table/table.component';
 import { TableViewComponent } from './table-view/table-view.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
-
+import { AgmCoreModule } from '@agm/core';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,12 +42,16 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     TableViewComponent
   ],
   imports: [
+    NgbModule,
     BrowserModule,
     ChartsModule,
     ReactiveFormsModule,
     HttpModule,
     NgxSpinnerModule,
     HttpClientModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBFGgInqDIGk0mwnDkG4uix7vq7D7z3Qk8'
+    }),
     RouterModule.forRoot([
           {
             path:"",

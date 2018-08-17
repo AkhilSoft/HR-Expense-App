@@ -17,6 +17,7 @@ export class LoginComponent implements OnInit {
    password:new FormControl("",[Validators.required]),
     
   });
+
   statusMessage:string='';
 
   constructor(private http:Http,private loginService:LoginService,private router:Router) { 

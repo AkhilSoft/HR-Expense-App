@@ -1,10 +1,8 @@
- .form-group{
-    margin: 5%
-    
-    }
-  
-button{
-        margin-top: 5%;
-       width: 100%
+.form-group {
+  margin: 5%;
 }
 
+button {
+  margin-top: 5%;
+  width: 100%;
+}

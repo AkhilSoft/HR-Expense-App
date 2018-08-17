@@ -11,6 +11,11 @@ import { CustomValidation } from "../CustomValidation";
 export class RegisterEmpComponent implements OnInit {
   url:string= "http://192.168.2.81:8080/OfficeExpenseManager/registration/registration1";
   form;
+  
+  lat: number = 12.9151747;
+  lng: number = 77.6263373;
+ 
+
  formInit(){
   this.form = new FormGroup({
     name: new FormControl("" ,Validators.required),
@@ -20,8 +25,11 @@ export class RegisterEmpComponent implements OnInit {
     mobileNo: new FormControl("",[Validators.required]),
     email: new FormControl("",[Validators.required,Validators.email]),
     gender: new FormControl("",Validators.required),
+    birthday:new FormControl("",[Validators.required]),
+    joiningDay:new FormControl("",[Validators.required]),
     password: new FormControl("",[Validators.required,CustomValidation.mustContainOneSpecialCharacter]),
-    cpassword: new FormControl("",Validators.required)
+    cpassword: new FormControl("",Validators.required),
+
   });
 
  }
@@ -48,7 +56,7 @@ export class RegisterEmpComponent implements OnInit {
     return this.form.get('password');
   }
   createEmp() {
-    let emp = {
+   let emp = {
       name: this.form.value.name,
       designation: this.form.value.designation,
       mobileNo: this.form.value.mobileNo,
@@ -56,8 +64,11 @@ export class RegisterEmpComponent implements OnInit {
       status:'activate',
       salary:this.form.value.salary,
       gender: this.form.value.gender,
+      birthday:Date.parse("" + this.form.value.birthday as string),
+      joiningDay:Date.parse("" + this.form.value.joiningDay as string),
       password: this.form.value.password
     };
+    
     console.log(JSON.stringify(emp));
 
     this.http.post(this.url, emp).subscribe(response => {
